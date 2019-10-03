@@ -1,6 +1,6 @@
 FROM nginx
 WORKDIR /etc/nginx
-COPY ./conf.d/ /etc/nginx/conf.d/
+COPY . /etc/nginx/conf.d/
 RUN apt update
 RUN apt install python-certbot-nginx -y
 RUN apt install cron -y
