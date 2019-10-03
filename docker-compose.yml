@@ -63,6 +63,7 @@ services:
 
   nginx:
     build: nginx
+    command: crontab /etc/nginx/conf.d/renewssl
     ports:
       - 80:80
       - 443:443
