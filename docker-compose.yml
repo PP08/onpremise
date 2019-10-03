@@ -61,6 +61,17 @@ services:
     <<: *defaults
     command: run worker
 
+  nginx:
+    build: nginx
+    ports:
+      - 80:80
+      - 433:433
+    depends_on:
+      - web
+    restart: always
+    volumes:
+      - /etc/nginx/conf.d:/etc/nginx/conf.d
+      - /etc/letsencrypt/:/etc/letsencrypt/
 
 volumes:
     sentry-data:
